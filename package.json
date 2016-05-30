@@ -1,0 +1,33 @@
+{
+  "name": "point-text",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/api.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-livereload": "^3.8.1",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "compile": "./node_modules/.bin/babel src -d build",
+    "watchify": "watchify --extension=js -o cs-text.js src/api.js",
+    "start": "watchify --extension=js -o cs-text.js src/api.js & python -m SimpleHTTPServer",
+    "build": "browserify src/api.js -o cs-text.js && uglifyjs cs-text.js -m -c -o cs-text-min.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "author": "chunseop",
+  "license": "ISC"
+}
