@@ -1,15 +1,12 @@
 export const FOCAL_LENGTH = 250;
 export class Dot {
 	constructor(centerX, centerY, centerZ, radius) {
-		this.dx = centerX;	// destination dot
+		this.dx = centerX;	// destination x
 		this.dy = centerY;
 		this.dz = centerZ;
-		this.tx = 0;
-		this.ty = 0;
-		this.tz = 0;
-		this.x = 0;
-		this.y = 0;
-		this.z = 0;
+		this.x = 0;	// Math.random() * canvas.width
+		this.y = 0;	// Math.random() * canvas.height
+		this.z = 0;	// Math.random() * FOCAL_LENGTH * 2
 		this.radius = radius;
 	}
 

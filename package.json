@@ -19,7 +19,6 @@
   },
   "scripts": {
     "compile": "./node_modules/.bin/babel src -d build",
-    "watchify": "watchify --extension=js -o cs-text.js src/api.js",
     "start": "watchify --extension=js -o cs-text.js src/api.js & python -m SimpleHTTPServer",
     "build": "browserify src/api.js -o cs-text.js && uglifyjs cs-text.js -m -c -o cs-text-min.js"
   },
